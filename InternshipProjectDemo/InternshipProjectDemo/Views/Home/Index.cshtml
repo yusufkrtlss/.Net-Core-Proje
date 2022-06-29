@@ -1,0 +1,15 @@
+﻿@model InternshipProjectDemo.Models.WriterDetailsModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    profil resmi
+    @Model.Pictures.Where(s=>s.IsFirst = true);
+    <h1 class="display-4">@Model.Writer.WriterName</h1>
+    @foreach(var img in Model.Pictures)
+    {
+        <img src="@img.Url" />
+    }
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
